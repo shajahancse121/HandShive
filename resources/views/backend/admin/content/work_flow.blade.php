@@ -39,7 +39,8 @@
                                             <select name="department_id" required   class="selectpicker" data-live-search="true">
                                                 <option value="">Choose...</option>
                                                 @foreach($departments as $department)
-                                                    <option value="{{$department->id}}">{{$department->name}}</option>
+                                                <option  value="{{$department->id}}" data-content="<span class='badge badge-primary'>{{$department->name}}</span>">{{$department->name}}</option>
+
                                                 @endforeach
 
                                             </select>

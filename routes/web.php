@@ -169,12 +169,16 @@ Route::group(['middleware'=>['web','customer','revalidate']], function(){
         Route::post('edit-product/{id}', 'ProductController@updateProduct');
 
         //manage content
-        Route::get('slider', 'ManageContentController@viewAllSlider')->name('admin.slider');
+        Route::get('department-slider', 'ManageContentController@viewAllSlider')->name('admin.slider');
         Route::post('save-slider', 'ManageContentController@saveSlider')->name('save.slider');
         Route::post('update-slider', 'ManageContentController@updateSlider')->name('update.slider');
         Route::get('delete-slider/{id}', 'ManageContentController@deleteSlider')->name('admin.delete-slider');
         Route::get('edit-slider', 'ManageContentController@editSlider')->name('admin.edit-slider');
-
+        //task we do content
+        Route::get('department-task-we-do', 'ManageContentController@showTaskWeDo')->name('admin.courier');
+        Route::post('save-courier', 'ManageContentController@saveTaskWeDo')->name('save.courier');
+        Route::get('edit-task', 'ManageContentController@editTask')->name('admin.edit-task');
+        Route::post('edit-task', 'ManageContentController@updateCourier');
 //        Route::get('support', 'ManageContentController@viewAllSupport')->name('admin.support');
 //        Route::get('edit-support', 'ManageContentController@editSupport')->name('admin.edit-support');
 //        Route::post('update-support', 'ManageContentController@updateSupport')->name('update.support-content');
@@ -193,11 +197,11 @@ Route::group(['middleware'=>['web','customer','revalidate']], function(){
 
         //blog
         Route::get('blog-category', 'ManageContentController@blogCategory')->name('admin.blog-category');
-        Route::get('blog', 'ManageContentController@viewAllBlog')->name('admin.blog');
+        Route::get('department-why-choose-us', 'ManageContentController@viewAllBlog')->name('admin.blog');
         Route::get('delete-blog-comment/{id}', 'ManageContentController@deleteComment')->name('admin.delete-blog-comment');
         Route::get('delete-support-service/{id}', 'ManageContentController@deleteSupportService')->name('admin.delete-support-service');
         Route::get('blog-comments', 'ManageContentController@viewAllBlogComments')->name('admin.blog-comments');
-        Route::get('add-blog', 'ManageContentController@addBlog')->name('admin.add-blog');
+        Route::get('add-support-service', 'ManageContentController@addBlog')->name('admin.add-blog');
         Route::get('edit-support-service/{id}', 'ManageContentController@editSupportService')->name('admin.edit-support-service');
         Route::post('edit-support-service/{id}', 'ManageContentController@updateSupportService');
         Route::post('save-support-services', 'ManageContentController@saveSupportService')->name('admin.save-support-service');
@@ -223,7 +227,7 @@ Route::group(['middleware'=>['web','customer','revalidate']], function(){
         Route::get('delete-share/{id}', 'ManageContentController@deleteShare')->name('admin.delete-share');
 
 
-        Route::get('add-work-flow', 'ManageContentController@addWorkFlow')->name('admin.add-work-flow');
+        Route::get('department-work-flow', 'ManageContentController@addWorkFlow')->name('admin.add-work-flow');
         Route::post('save-work-flow', 'ManageContentController@saveWorkFlow')->name('save.work_flow');
         Route::get('edit-work-flow', 'ManageContentController@editWorkFlow')->name('admin.edit-work-flow');
         Route::post('update-work-flow', 'ManageContentController@updateWorkFlow')->name('update.work-flow');

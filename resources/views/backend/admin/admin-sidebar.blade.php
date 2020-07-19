@@ -285,6 +285,7 @@
             'admin.mission-vision',
             'admin.add-work-flow',
             'admin.customer-share',
+            'admin.courier',
 
         ];
         ?>
@@ -324,6 +325,9 @@
                 <li class="{{ (Route::currentRouteName() == 'admin.add-work-flow') ? 'active' : '' }}">
                     <a href="{{route('admin.add-work-flow')}}"> Our Workflow </a>
                 </li>
+                <li class="{{ (Route::currentRouteName() == 'admin.courier') ? 'active' : '' }}">
+                    <a href="{{route('admin.courier')}}"> Task We Do </a>
+                </li>
 
 {{--                <li class="{{ (Route::currentRouteName() == 'admin.customer-share') ? 'active' : '' }}">--}}
 {{--                    <a href="{{route('admin.customer-share')}}"> Customer Testimonial </a>--}}
@@ -332,13 +336,13 @@
 
             </ul>
         </li>
-        <?php
-        $subMenu = [
-            'admin.shipping',
-            'admin.courier'
+{{--        <?php--}}
+{{--        $subMenu = [--}}
+{{--            'admin.shipping',--}}
+{{--            'admin.courier'--}}
 
-        ];
-        ?>
+{{--        ];--}}
+{{--        ?>--}}
 {{--        <li class="menu">--}}
 {{--            <a href="#datatables" data-active="{{ in_array(Route::currentRouteName(), $subMenu) ? 'true' : 'false' }}" data-toggle="collapse" aria-expanded="{{ in_array(Route::currentRouteName(), $subMenu) ? 'true' : 'false' }}" class="dropdown-toggle {{ in_array(Route::currentRouteName(), $subMenu) ? '' : 'collapse' }}">--}}
 {{--                <div class="">--}}
@@ -353,9 +357,7 @@
 {{--                <li class="{{ (Route::currentRouteName() == 'admin.shipping') ? 'active' : '' }}">--}}
 {{--                    <a href="{{route('admin.shipping')}}"> Shipping </a>--}}
 {{--                </li>--}}
-{{--                <li class="{{ (Route::currentRouteName() == 'admin.courier') ? 'active' : '' }}">--}}
-{{--                    <a href="{{route('admin.courier')}}"> Courier </a>--}}
-{{--                </li>--}}
+{{--               --}}
 
 {{--            </ul>--}}
 {{--        </li>--}}

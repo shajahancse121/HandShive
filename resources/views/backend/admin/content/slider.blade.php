@@ -35,10 +35,11 @@
                                     <div class="form-group row mb-4">
                                         <label for="hPassword" class="col-xl-3 col-sm-3 col-sm-2 col-form-label">Department</label>
                                         <div class="col-xl-9 col-lg-9 col-sm-10">
-                                            <select name="department_id" required  class="form-control">
+                                            <select name="department_id" required  class="selectpicker" data-live-search="true">
                                                 <option value="">Choose...</option>
                                                 @foreach($departments as $department)
-                                                    <option value="{{$department->id}}">{{$department->name}}</option>
+                                                    
+                                                    <option  value="{{$department->id}}" data-content="<span class='badge badge-primary'>{{$department->name}}</span>">{{$department->name}}</option>
                                                 @endforeach
 
                                             </select>
@@ -244,6 +245,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('backend/plugins/table/datatable/datatables.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ asset('backend/plugins/table/datatable/dt-global_style.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ asset('backend/plugins/table/datatable/custom_dt_multiple_tables.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('backend/plugins/bootstrap-select/bootstrap-select.min.css')}}">
 
 
     <!-- END PAGE LEVEL STYLES -->
@@ -265,6 +267,7 @@
 @section('script')
 
     <script src="{{ asset('backend/plugins/table/datatable/datatables.js')}}"></script>
+    <script src="{{ asset('backend/plugins/bootstrap-select/bootstrap-select.min.js')}}"></script>
 
 
     <script>
